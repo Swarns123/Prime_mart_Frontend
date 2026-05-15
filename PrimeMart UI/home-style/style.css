@@ -45,7 +45,7 @@ body {
 /* Hero */
 .hero {
     height: 90vh;
-    background: url('https://images.unsplash.com/photo-1490481651871-ab68de25d43d') no-repeat center/cover;
+    background: url('../assets/background.jpg') no-repeat center/cover;
     display: flex;
     align-items: center;
     justify-content: center;
