@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 260 240" role="img" aria-label="Floral festive saree">
+  <rect width="260" height="240" rx="24" fill="#fff5ef"/>
+  <path d="M91 36 C135 39 158 62 163 102 C170 159 134 178 98 207 C116 143 96 108 91 36 Z" fill="#d44f30"/>
+  <path d="M114 41 C161 58 184 91 183 137 C182 170 166 192 139 207 C150 166 154 111 114 41 Z" fill="#f2b84b"/>
+  <path d="M97 69 C122 77 139 91 151 112 M101 103 C126 111 145 127 157 152" stroke="#fff8ec" stroke-width="5" stroke-linecap="round"/>
+  <circle cx="151" cy="86" r="7" fill="#26324f"/>
+  <circle cx="128" cy="137" r="7" fill="#26324f"/>
+  <circle cx="156" cy="164" r="7" fill="#26324f"/>
+</svg>

@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PrimeMart Product Listing</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../style/product-listing.css">
+</head>
+<body>
+    <script>
+        document.body.dataset.theme = localStorage.getItem("primeMartTheme") || "light";
+    </script>
+    <!-- Navbar -->
+    <header class="site-header">
+        <nav class="navbar">
+            <h2 class="logo">PrimeMart</h2>
+            <ul class="nav-links">
+                <li><a href="../../PrimeMart UI/home-html & js/home.html">Home</a></li>
+                <li><a href="#products">Products</a></li>
+                <li><a href="#offers">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="nav-actions">
+                <button class="theme-toggle" type="button" aria-label="Switch color theme"></button>
+                <button class="login-btn" type="button">Login</button>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="page-intro">
+            <p class="breadcrumb">Home / Discovery / Products</p>
+            <h1>Products</h1>
+            <p>Explore fresh PrimeMart picks for everyday comfort, festive style, and easy gifting.</p>
+        </section>
+
+        <section class="product-listing" id="products">
+            <div class="section-heading">
+                <div>
+                    <p class="eyebrow">Discovery</p>
+                    <h2>Popular Products</h2>
+                </div>
+                <div class="listing-meta">
+                    <p id="productCount">Showing 6 products</p>
+                    <p>Cart: <span id="cartCount">0</span></p>
+                </div>
+            </div>
+
+            <div class="catalog-layout">
+                <aside class="filter-panel" aria-label="Product filters">
+                    <div class="filter-block">
+                        <h3>Categories</h3>
+                        <div class="filter-group" role="group" aria-label="Filter by category">
+                            <button class="filter-btn active" type="button" data-category="all">All Products</button>
+                            <button class="filter-btn" type="button" data-category="clothing">Clothing</button>
+                            <button class="filter-btn" type="button" data-category="footwear">Footwear</button>
+                            <button class="filter-btn" type="button" data-category="accessories">Accessories</button>
+                        </div>
+                    </div>
+
+                    <div class="filter-block">
+                        <h3>Price Range</h3>
+                        <label class="check-row"><input type="checkbox"> Under Rs. 800</label>
+                        <label class="check-row"><input type="checkbox"> Rs. 800 - Rs. 1,500</label>
+                        <label class="check-row"><input type="checkbox"> Above Rs. 1,500</label>
+                    </div>
+
+                    <div class="filter-block">
+                        <h3>Availability</h3>
+                        <label class="check-row"><input type="checkbox" checked> In Stock</label>
+                        <label class="check-row"><input type="checkbox"> On Sale</label>
+                    </div>
+                </aside>
+
+                <div class="listing-area">
+                    <div class="toolbar" aria-label="Product tools">
+                        <div class="search-box">
+                            <label for="productSearch">Search products</label>
+                            <input id="productSearch" type="search" placeholder="Search shirts, sarees, shoes">
+                        </div>
+
+                        <div class="sort-box">
+                            <label for="sortProducts">Sort by</label>
+                            <select id="sortProducts">
+                                <option value="featured">Featured</option>
+                                <option value="low-high">Price: Low to High</option>
+                                <option value="high-low">Price: High to Low</option>
+                                <option value="rating">Top Rated</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="product-grid" id="productGrid">
+                        <article class="product-card" data-category="clothing" data-name="Oxford Cotton Shirt" data-price="799" data-rating="4.8">
+                            <div class="product-media">
+                                <img src="../../assets/oxford-shirt.svg" alt="Oxford cotton shirt">
+                                <span class="badge">Best seller</span>
+                            </div>
+                            <div class="product-content">
+                                <p class="category">Clothing</p>
+                                <h3>Oxford Cotton Shirt</h3>
+                                <div class="rating" aria-label="Rated 4.8 out of 5">4.8</div>
+                                <p class="price">Rs. 799</p>
+                                <button class="add-cart" type="button">Add to Cart</button>
+                            </div>
+                        </article>
+
+                        <article class="product-card" data-category="clothing" data-name="Relaxed Denim Pants" data-price="1199" data-rating="4.6">
+                            <div class="product-media">
+                                <img src="../../assets/denim-pants.svg" alt="Relaxed denim pants">
+                            </div>
+                            <div class="product-content">
+                                <p class="category">Clothing</p>
+                                <h3>Relaxed Denim Pants</h3>
+                                <div class="rating" aria-label="Rated 4.6 out of 5">4.6</div>
+                                <p class="price">Rs. 1,199</p>
+                                <button class="add-cart" type="button">Add to Cart</button>
+                            </div>
+                        </article>
+
+                        <article class="product-card" data-category="clothing" data-name="Floral Festive Saree" data-price="1499" data-rating="4.9">
+                            <div class="product-media">
+                                <img src="../../assets/floral-saree.svg" alt="Floral festive saree">
+                                <span class="badge">New</span>
+                            </div>
+                            <div class="product-content">
+                                <p class="category">Clothing</p>
+                                <h3>Floral Festive Saree</h3>
+                                <div class="rating" aria-label="Rated 4.9 out of 5">4.9</div>
+                                <p class="price">Rs. 1,499</p>
+                                <button class="add-cart" type="button">Add to Cart</button>
+                            </div>
+                        </article>
+
+                        <article class="product-card" data-category="clothing" data-name="Printed Cotton Kurti" data-price="699" data-rating="4.5">
+                            <div class="product-media">
+                                <img src="../../assets/cotton-kurti.svg" alt="Printed cotton kurti">
+                            </div>
+                            <div class="product-content">
+                                <p class="category">Clothing</p>
+                                <h3>Printed Cotton Kurti</h3>
+                                <div class="rating" aria-label="Rated 4.5 out of 5">4.5</div>
+                                <p class="price">Rs. 699</p>
+                                <button class="add-cart" type="button">Add to Cart</button>
+                            </div>
+                        </article>
+
+                        <article class="product-card" data-category="footwear" data-name="Street Runner Sneakers" data-price="1799" data-rating="4.7">
+                            <div class="product-media">
+                                <img src="../../assets/runner-sneakers.svg" alt="Street runner sneakers">
+                            </div>
+                            <div class="product-content">
+                                <p class="category">Footwear</p>
+                                <h3>Street Runner Sneakers</h3>
+                                <div class="rating" aria-label="Rated 4.7 out of 5">4.7</div>
+                                <p class="price">Rs. 1,799</p>
+                                <button class="add-cart" type="button">Add to Cart</button>
+                            </div>
+                        </article>
+
+                        <article class="product-card" data-category="accessories" data-name="Classic Weekender Bag" data-price="999" data-rating="4.4">
+                            <div class="product-media">
+                                <img src="../../assets/weekender-bag.svg" alt="Classic weekender bag">
+                                <span class="badge">Deal</span>
+                            </div>
+                            <div class="product-content">
+                                <p class="category">Accessories</p>
+                                <h3>Classic Weekender Bag</h3>
+                                <div class="rating" aria-label="Rated 4.4 out of 5">4.4</div>
+                                <p class="price">Rs. 999</p>
+                                <button class="add-cart" type="button">Add to Cart</button>
+                            </div>
+                        </article>
+                    </div>
+
+                    <p class="empty-state" id="emptyState">No products match your search.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="offer-strip" id="offers">
+            <div>
+                <h2>Free delivery on orders over Rs. 999</h2>
+                <p>Fast shipping, easy returns, and fresh deals every week.</p>
+            </div>
+            <a href="#products">Shop deals</a>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer" id="contact">
+        <div class="footer-container">
+
+            <!-- Logo & Description -->
+            <div class="footer-col">
+                <h2 class="footer-logo">PrimeMart</h2>
+                <p>Your premium fashion store for modern style and comfort.</p>
+            </div>
+
+            <!-- Discovery -->
+            <div class="footer-col">
+                <h3>Discovery</h3>
+                <ul>
+                    <li><a href="#products">New Season</a></li>
+                    <li><a href="#products">Most Searched</a></li>
+                    <li><a href="#products">Most Sold</a></li>
+                </ul>
+            </div>
+
+            <!-- About -->
+            <div class="footer-col">
+                <h3>About</h3>
+                <ul>
+                    <li><a href="#">Help</a></li>
+                    <li><a href="#">Shipping</a></li>
+                    <li><a href="#">Affiliate</a></li>
+                </ul>
+            </div>
+
+            <!-- Info -->
+            <div class="footer-col">
+                <h3>Info</h3>
+                <ul>
+                    <li><a href="#">Contact Us</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Terms & Conditions</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 PrimeMart | All Rights Reserved</p>
+        </div>
+    </footer>
+
+    <script src="../Functionality/product-listing.js"></script>
+</body>
+</html>

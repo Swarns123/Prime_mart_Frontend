@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 260 240" role="img" aria-label="Classic weekender bag">
+  <rect width="260" height="240" rx="24" fill="#fff5ef"/>
+  <path d="M82 92 H178 C195 92 208 105 208 122 V174 C208 184 200 192 190 192 H70 C60 192 52 184 52 174 V122 C52 105 65 92 82 92 Z" fill="#a96843" stroke="#5d351f" stroke-width="4"/>
+  <path d="M100 92 V78 C100 61 113 50 130 50 C147 50 160 61 160 78 V92" fill="none" stroke="#5d351f" stroke-width="8" stroke-linecap="round"/>
+  <path d="M52 136 H208" stroke="#f1c08b" stroke-width="5"/>
+  <path d="M84 92 V192 M176 92 V192" stroke="#5d351f" stroke-width="4"/>
+  <circle cx="84" cy="124" r="5" fill="#f1c08b"/>
+  <circle cx="176" cy="124" r="5" fill="#f1c08b"/>
+</svg>
