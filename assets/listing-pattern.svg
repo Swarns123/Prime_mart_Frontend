@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 420" role="img" aria-label="PrimeMart premium pattern">
+  <rect width="1200" height="420" fill="#26324f"/>
+  <circle cx="1050" cy="70" r="140" fill="#ffffff" opacity=".12"/>
+  <circle cx="900" cy="330" r="210" fill="#d8b77f" opacity=".18"/>
+  <path d="M0 300 C180 230 310 360 500 280 S850 140 1200 230 V420 H0 Z" fill="#111827" opacity=".48"/>
+  <path d="M80 110 H280 M130 160 H390 M780 110 H1030 M720 170 H1110" stroke="#ffffff" stroke-width="10" stroke-linecap="round" opacity=".18"/>
+</svg>
