@@ -4,21 +4,30 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PrimeMart</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../home-style/style.css">
 </head>
 <body>
+<script>
+    document.body.dataset.theme = localStorage.getItem("primeMartTheme") || "light";
+</script>
 
 <!-- Navbar -->
-<header>
+<header class="site-header">
     <nav class="navbar">
         <h2 class="logo">PrimeMart</h2>
         <ul class="nav-links">
             <li><a href="#">Home</a></li>
-            <li><a href="#">Discovery</a></li>
+            <li><a href="../../pLp/html/index.html">Products</a></li>
             <li><a href="#">About</a></li>
             <li><a href="#">Contact</a></li>
         </ul>
-        <button class="login-btn">Login</button>
+        <div class="nav-actions">
+            <button class="theme-toggle" type="button" aria-label="Switch color theme"></button>
+            <button class="login-btn">Login</button>
+        </div>
     </nav>
 </header>
 
@@ -27,39 +36,61 @@
     <div class="hero-content">
         <h1>Pure Comfort</h1>
         <p>Discover beautiful products and bring happiness into your home.</p>
-        <button>Explore Now</button>
+        <a class="hero-btn" href="../../pLp/html/index.html">Explore Now</a>
     </div>
 </section>
 
 <!-- Products -->
 <section class="products">
     <h2>Our Products</h2>
-    <div class="product-grid">
+    <p class="section-subtitle">Browse the PrimeMart product listing directly from the home page.</p>
 
-        <div class="card">
-            <img src="...." alt="">
-            <h3>Shirts</h3>
-            <p>₹199</p>
+    <div class="home-plp-toolbar">
+        <div>
+            <span>Showing 4 popular products</span>
+            <strong>New Season</strong>
         </div>
+        <a href="../../pLp/html/index.html">View All Products</a>
+    </div>
 
-        <div class="card">
-            <img src="...." alt="">
-            <h3>Pants</h3>
-            <p>₹249</p>
+    <div class="home-plp-layout">
+        <aside class="home-filter-panel">
+            <h3>Categories</h3>
+            <a class="active" href="../../pLp/html/index.html">All Products</a>
+            <a href="../../pLp/html/index.html">Clothing</a>
+            <a href="../../pLp/html/index.html">Footwear</a>
+            <a href="../../pLp/html/index.html">Accessories</a>
+        </aside>
+
+        <div class="home-plp-grid">
+            <a class="home-product-card" href="../../pLp/html/index.html">
+                <img src="../../assets/oxford-shirt.svg" alt="Oxford cotton shirt">
+                <span>Clothing</span>
+                <h3>Oxford Cotton Shirt</h3>
+                <p>Rs. 799</p>
+            </a>
+
+            <a class="home-product-card" href="../../pLp/html/index.html">
+                <img src="../../assets/denim-pants.svg" alt="Relaxed denim pants">
+                <span>Clothing</span>
+                <h3>Relaxed Denim Pants</h3>
+                <p>Rs. 1,199</p>
+            </a>
+
+            <a class="home-product-card" href="../../pLp/html/index.html">
+                <img src="../../assets/floral-saree.svg" alt="Floral festive saree">
+                <span>Clothing</span>
+                <h3>Floral Festive Saree</h3>
+                <p>Rs. 1,499</p>
+            </a>
+
+            <a class="home-product-card" href="../../pLp/html/index.html">
+                <img src="../../assets/cotton-kurti.svg" alt="Printed cotton kurti">
+                <span>Clothing</span>
+                <h3>Printed Cotton Kurti</h3>
+                <p>Rs. 699</p>
+            </a>
         </div>
-
-        <div class="card">
-            <img src="...." alt="">
-            <h3>Saree</h3>
-            <p>₹299</p>
-        </div>
-
-        <div class="card">
-            <img src="...." alt="">
-            <h3>Kurti</h3>
-            <p>₹149</p>
-        </div>
-
     </div>
 </section>
 
@@ -72,29 +103,50 @@
     </div>
 
     <div class="about-img">
-        <img src="../assets/img.png" alt="fashion">
+        <img src="../../assets/img.png" alt="fashion">
     </div>
 </section>
 
 <!-- Testimonials -->
 <section class="testimonials">
-    <h2>Testimonials</h2>
+    <div class="testimonial-header">
+        <span class="testimonial-eyebrow">Customer Stories</span>
+        <h2>Loved by PrimeMart shoppers</h2>
+        <p>Comfort, quality, and quick delivery come together in every order.</p>
+        <div class="testimonial-highlights" aria-label="PrimeMart customer highlights">
+            <span>4.8/5 Rating</span>
+            <span>Fast Delivery</span>
+            <span>Easy Returns</span>
+        </div>
+    </div>
 
-    <div class="testimonial-grid">
-        <div class="testimonial">
-            <p>"Amazing shirts quality!"</p>
-            <h4>- Shubhadip</h4>
+    <div class="testimonial-carousel" aria-label="Customer testimonials carousel">
+        <button class="carousel-btn carousel-prev" type="button" aria-label="Previous testimonial">&larr;</button>
+
+        <div class="testimonial-viewport">
+            <div class="testimonial-track">
+                <div class="testimonial">
+                    <span class="testimonial-rating">5.0</span>
+                    <p>"Amazing shirts quality!"</p>
+                    <h4>- Shubhadip</h4>
+                </div>
+
+                <div class="testimonial">
+                    <span class="testimonial-rating">4.9</span>
+                    <p>"Loved the service."</p>
+                    <h4>- Rohit</h4>
+                </div>
+
+                <div class="testimonial">
+                    <span class="testimonial-rating">4.8</span>
+                    <p>"Highly recommended!"</p>
+                    <h4>- Shubhash</h4>
+                </div>
+            </div>
         </div>
 
-        <div class="testimonial">
-            <p>"Loved the service."</p>
-            <h4>- Rohit</h4>
-        </div>
-
-        <div class="testimonial">
-            <p>"Highly recommended!"</p>
-            <h4>- Shubhash</h4>
-        </div>
+        <button class="carousel-btn carousel-next" type="button" aria-label="Next testimonial">&rarr;</button>
+        <div class="carousel-dots" aria-label="Choose testimonial"></div>
     </div>
 </section>
 
@@ -112,9 +164,9 @@
         <div class="footer-col">
             <h3>Discovery</h3>
             <ul>
-                <li><a href="#">New Season</a></li>
-                <li><a href="#">Most Searched</a></li>
-                <li><a href="#">Most Sold</a></li>
+                <li><a href="../../pLp/html/index.html">New Season</a></li>
+                <li><a href="../../pLp/html/index.html">Most Searched</a></li>
+                <li><a href="../../pLp/html/index.html">Most Sold</a></li>
             </ul>
         </div>
 
@@ -145,6 +197,6 @@
     </div>
 </footer>
 
-<script src="script.js"></script>
+<script src="function.js"></script>
 </body>
 </html>

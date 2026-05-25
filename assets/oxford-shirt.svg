@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 260 240" role="img" aria-label="Oxford cotton shirt">
+  <rect width="260" height="240" rx="24" fill="#eef6ee"/>
+  <path d="M83 58 L112 42 H148 L177 58 L212 78 L194 119 L174 112 V198 H86 V112 L66 119 L48 78 Z" fill="#ffffff" stroke="#26324f" stroke-width="4"/>
+  <path d="M112 42 L130 72 L148 42" fill="none" stroke="#26324f" stroke-width="4" stroke-linejoin="round"/>
+  <path d="M130 72 V198" stroke="#c9d9cb" stroke-width="3"/>
+  <circle cx="138" cy="102" r="4" fill="#b8894d"/>
+  <circle cx="138" cy="132" r="4" fill="#b8894d"/>
+  <circle cx="138" cy="162" r="4" fill="#b8894d"/>
+</svg>

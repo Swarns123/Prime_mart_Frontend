@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 260 240" role="img" aria-label="Printed cotton kurti">
+  <rect width="260" height="240" rx="24" fill="#eef6ee"/>
+  <path d="M100 45 H160 L187 87 L170 102 L160 90 V204 H100 V90 L90 102 L73 87 Z" fill="#8d96b8" stroke="#26324f" stroke-width="4" stroke-linejoin="round"/>
+  <path d="M113 45 C116 62 124 70 130 70 C136 70 144 62 147 45" fill="#f7f3ec" stroke="#26324f" stroke-width="4"/>
+  <path d="M114 102 H146 M109 132 H151 M115 162 H145" stroke="#ffffff" stroke-width="5" stroke-linecap="round"/>
+  <circle cx="130" cy="94" r="5" fill="#f2b84b"/>
+  <circle cx="130" cy="124" r="5" fill="#f2b84b"/>
+  <circle cx="130" cy="154" r="5" fill="#f2b84b"/>
+</svg>
