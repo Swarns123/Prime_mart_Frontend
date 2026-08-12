@@ -10,6 +10,7 @@ const themeToggle = document.querySelector(".theme-toggle");
 
 let activeCategory = "all";
 let cartItems = 0;
+const productDetailsPage = "../../pdp/html/pdp.html";
 
 function setTheme(theme) {
     document.body.dataset.theme = theme;
@@ -65,6 +66,40 @@ function updateProducts() {
     emptyState.classList.toggle("show", visibleCards.length === 0);
 }
 
+function openProductDetails(card) {
+    const productId = card.dataset.productId;
+
+    if (!productId) {
+        return;
+    }
+
+    window.location.href = `${productDetailsPage}?product=${encodeURIComponent(productId)}`;
+}
+
+productCards.forEach((card) => {
+    card.setAttribute("role", "link");
+    card.setAttribute("tabindex", "0");
+    card.setAttribute("aria-label", `View details for ${card.dataset.name}`);
+
+    card.addEventListener("click", (event) => {
+        if (event.target.closest("button")) {
+            return;
+        }
+
+        openProductDetails(card);
+    });
+
+    card.addEventListener("keydown", (event) => {
+        if (event.target.closest("button")) {
+            return;
+        }
+
+        if (event.key === "Enter") {
+            openProductDetails(card);
+        }
+    });
+});
+
 filterButtons.forEach((button) => {
     button.addEventListener("click", () => {
         filterButtons.forEach((item) => item.classList.remove("active"));
@@ -75,7 +110,8 @@ filterButtons.forEach((button) => {
 });
 
 document.querySelectorAll(".add-cart").forEach((button) => {
-    button.addEventListener("click", () => {
+    button.addEventListener("click", (event) => {
+        event.stopPropagation();
         cartItems += 1;
         cartCount.textContent = cartItems;
         button.textContent = "Added";

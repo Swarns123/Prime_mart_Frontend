@@ -358,6 +358,15 @@ body[data-theme="dark"] .theme-toggle::before {
     line-height: 1.1;
 }
 
+.product-category {
+    margin-bottom: 10px;
+    color: var(--accent);
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0;
+    text-transform: uppercase;
+}
+
 .price {
     margin-bottom: 28px;
     color: var(--accent);

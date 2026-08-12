@@ -37,36 +37,38 @@
         <!-- Left Side -->
         <div class="product-image-box">
 
-           <img src="../../assets/mintCandle.png" alt="Candle" class="product-image">
-            <h3>
+           <img src="../../assets/mintCandle.png" alt="Candle" class="product-image" id="productImage">
+            <h3 id="productSummary">
                 All hand-made with natural soy wax, Candleaf is made
                 for your pleasure moments.
             </h3>
 
-            <p class="shipping">FREE SHIPPING</p>
+            <p class="shipping" id="shippingNote">FREE SHIPPING</p>
 
         </div>
 
         <!-- Right Side -->
         <div class="product-details">
 
-            <h1>Spiced Mint Candleaf</h1>
+            <p class="product-category" id="productCategory">Home Decor</p>
 
-            <h2 class="price">Rs. 150</h2>
+            <h1 id="productTitle">Spiced Mint Candleaf</h1>
+
+            <h2 class="price" id="productPrice">Rs. 150</h2>
 
             <div class="quantity-box">
                 <label>Quantity</label>
 
                 <div class="quantity-control">
-                    <button>-</button>
-                    <span>1</span>
-                    <button>+</button>
+                    <button type="button" id="decreaseQuantity">-</button>
+                    <span id="quantityValue">1</span>
+                    <button type="button" id="increaseQuantity">+</button>
                 </div>
             </div>
 
-            <button class="cart-btn">Add to cart</button>
+            <button class="cart-btn" type="button">Add to cart</button>
 
-            <div class="product-info">
+            <div class="product-info" id="productInfo">
                 <p><strong>Wax:</strong> Top grade Soy wax that delivers a smoke less, consistent burn</p>
 
                 <p><strong>Fragrance:</strong> Premium quality ingredients with natural essential oils</p>
@@ -132,6 +134,157 @@
     </div>
 </footer>
 <script>
+    const products = {
+        "oxford-shirt": {
+            title: "Oxford Cotton Shirt",
+            category: "Clothing",
+            price: "Rs. 799",
+            image: "../../assets/oxford-shirt.svg",
+            alt: "Oxford cotton shirt",
+            summary: "A crisp cotton shirt made for easy office days, weekend plans, and polished everyday style.",
+            shipping: "FREE SHIPPING ABOVE RS. 999",
+            details: [
+                ["Fabric", "Soft breathable cotton with a structured Oxford weave"],
+                ["Fit", "Regular fit with full sleeves and a button-down collar"],
+                ["Care", "Machine wash cold with similar colors"],
+                ["Occasion", "Workwear, casual outings, and smart layering"],
+                ["Rating", "4.8 out of 5"]
+            ]
+        },
+        "denim-pants": {
+            title: "Relaxed Denim Pants",
+            category: "Clothing",
+            price: "Rs. 1,199",
+            image: "../../assets/denim-pants.svg",
+            alt: "Relaxed denim pants",
+            summary: "Relaxed denim pants with a comfortable everyday fit and sturdy stitching.",
+            shipping: "FREE SHIPPING",
+            details: [
+                ["Fabric", "Durable cotton denim with a comfortable hand feel"],
+                ["Fit", "Relaxed straight fit for all-day movement"],
+                ["Care", "Wash inside out and dry in shade"],
+                ["Occasion", "Daily wear, travel, and casual styling"],
+                ["Rating", "4.6 out of 5"]
+            ]
+        },
+        "floral-saree": {
+            title: "Floral Festive Saree",
+            category: "Clothing",
+            price: "Rs. 1,499",
+            image: "../../assets/floral-saree.svg",
+            alt: "Floral festive saree",
+            summary: "A graceful floral saree designed for festive gatherings, celebrations, and special evenings.",
+            shipping: "FREE SHIPPING",
+            details: [
+                ["Fabric", "Lightweight drape with a soft floral finish"],
+                ["Length", "Standard saree length with matching blouse fabric"],
+                ["Care", "Gentle hand wash or dry clean recommended"],
+                ["Occasion", "Festivals, family functions, and celebrations"],
+                ["Rating", "4.9 out of 5"]
+            ]
+        },
+        "cotton-kurti": {
+            title: "Printed Cotton Kurti",
+            category: "Clothing",
+            price: "Rs. 699",
+            image: "../../assets/cotton-kurti.svg",
+            alt: "Printed cotton kurti",
+            summary: "A breathable printed cotton kurti for warm days, daily comfort, and effortless styling.",
+            shipping: "FREE SHIPPING ABOVE RS. 999",
+            details: [
+                ["Fabric", "Pure cotton with a lightweight printed finish"],
+                ["Fit", "Comfort fit with side slits"],
+                ["Care", "Machine wash gentle cycle"],
+                ["Occasion", "Daily wear, college, work, and casual meetups"],
+                ["Rating", "4.5 out of 5"]
+            ]
+        },
+        "runner-sneakers": {
+            title: "Street Runner Sneakers",
+            category: "Footwear",
+            price: "Rs. 1,799",
+            image: "../../assets/runner-sneakers.svg",
+            alt: "Street runner sneakers",
+            summary: "Lightweight street sneakers built for daily walks, active commutes, and casual outfits.",
+            shipping: "FREE SHIPPING",
+            details: [
+                ["Upper", "Breathable textile upper with supportive overlays"],
+                ["Sole", "Cushioned midsole with durable grip"],
+                ["Fit", "Lace-up closure for adjustable support"],
+                ["Occasion", "Walking, travel, and everyday streetwear"],
+                ["Rating", "4.7 out of 5"]
+            ]
+        },
+        "weekender-bag": {
+            title: "Classic Weekender Bag",
+            category: "Accessories",
+            price: "Rs. 999",
+            image: "../../assets/weekender-bag.svg",
+            alt: "Classic weekender bag",
+            summary: "A roomy weekender bag with classic styling for short trips, gym days, and daily carry.",
+            shipping: "FREE SHIPPING ABOVE RS. 999",
+            details: [
+                ["Material", "Textured fabric body with reinforced handles"],
+                ["Storage", "Spacious main compartment with easy-access pockets"],
+                ["Carry", "Dual handles and adjustable shoulder strap"],
+                ["Occasion", "Travel, gym, office, and overnight stays"],
+                ["Rating", "4.4 out of 5"]
+            ]
+        },
+        "spiced-mint-candleaf": {
+            title: "Spiced Mint Candleaf",
+            category: "Home Decor",
+            price: "Rs. 150",
+            image: "../../assets/mintCandle.png",
+            alt: "Spiced mint Candleaf scented candle",
+            summary: "All hand-made with natural soy wax, Candleaf is made for your pleasure moments.",
+            shipping: "FREE SHIPPING",
+            details: [
+                ["Wax", "Top grade Soy wax that delivers a smoke less, consistent burn"],
+                ["Fragrance", "Premium quality ingredients with natural essential oils"],
+                ["Burning Time", "70-75 hours"],
+                ["Dimension", "10cm x 5cm"],
+                ["Weight", "400g"]
+            ]
+        }
+    };
+
+    const productId = new URLSearchParams(window.location.search).get("product") || "spiced-mint-candleaf";
+    const product = products[productId] || products["spiced-mint-candleaf"];
+    const quantityValue = document.querySelector("#quantityValue");
+    const decreaseQuantity = document.querySelector("#decreaseQuantity");
+    const increaseQuantity = document.querySelector("#increaseQuantity");
+    const cartButton = document.querySelector(".cart-btn");
+    let quantity = 1;
+
+    document.title = `${product.title} | PrimeMart`;
+    document.querySelector("#productImage").src = product.image;
+    document.querySelector("#productImage").alt = product.alt;
+    document.querySelector("#productSummary").textContent = product.summary;
+    document.querySelector("#shippingNote").textContent = product.shipping;
+    document.querySelector("#productCategory").textContent = product.category;
+    document.querySelector("#productTitle").textContent = product.title;
+    document.querySelector("#productPrice").textContent = product.price;
+    document.querySelector("#productInfo").innerHTML = product.details
+        .map(([label, value]) => `<p><strong>${label}:</strong> ${value}</p>`)
+        .join("");
+
+    function updateQuantity(nextQuantity) {
+        quantity = Math.max(1, nextQuantity);
+        quantityValue.textContent = quantity;
+    }
+
+    decreaseQuantity.addEventListener("click", () => updateQuantity(quantity - 1));
+    increaseQuantity.addEventListener("click", () => updateQuantity(quantity + 1));
+
+    cartButton.addEventListener("click", () => {
+        cartButton.textContent = `Added ${quantity} to cart`;
+
+        window.setTimeout(() => {
+            cartButton.textContent = "Add to cart";
+        }, 1400);
+    });
+
     const themeToggle = document.querySelector(".theme-toggle");
 
     function setTheme(theme) {

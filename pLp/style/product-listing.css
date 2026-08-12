@@ -530,14 +530,17 @@ body[data-theme="dark"] .theme-toggle::before {
     border: 1px solid var(--line);
     border-radius: 20px;
     box-shadow: 0 14px 34px rgba(28, 34, 52, 0.1);
+    cursor: pointer;
     transition: transform var(--motion-duration) var(--motion-ease), box-shadow var(--motion-duration) var(--motion-ease), border-color var(--motion-duration) var(--motion-ease);
     will-change: transform;
 }
 
-.product-card:hover {
+.product-card:hover,
+.product-card:focus-visible {
     transform: translateY(-7px);
     border-color: color-mix(in srgb, var(--accent) 45%, transparent);
     box-shadow: var(--shadow);
+    outline: none;
 }
 
 .product-card.hidden {
